@@ -61,9 +61,9 @@ nav.scrolled {
 }
 .logo { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
 .logo-img {
-  height:36px;
+  height:48px;
   width:auto;
-  max-width:170px;
+  max-width:240px;
   display:block;
   object-fit:contain;
   transition:transform .25s var(--ease);
@@ -72,8 +72,8 @@ nav.scrolled {
 .logo-img-inverted {
   filter:brightness(0) invert(1);
   opacity:.92;
-  height:34px;
-  max-width:160px;
+  height:44px;
+  max-width:220px;
 }
 /* legacy — no-ops on the page now */
 .logo-mark, .logo-text, .logo-text-white { display:none; }
