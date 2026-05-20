@@ -938,17 +938,41 @@ section { padding:96px 5%; }
 }
 .mthumb {
   aspect-ratio:1;
-  background:var(--cream);
+  background:var(--mc, var(--cream));
+  display:flex; align-items:center; justify-content:center;
   position:relative;
+  transition:transform .35s var(--ease);
+  color:var(--ink-mid);
   overflow:hidden;
 }
-.mthumb img {
-  position:absolute; inset:0;
-  width:100%; height:100%;
-  object-fit:cover;
-  transition:transform .5s var(--ease);
+.mthumb [data-icon] {
+  width:64px; height:64px;
+  color:var(--orange);
+  filter:drop-shadow(0 4px 12px rgba(232,101,42,.18));
+  transition:transform .35s var(--ease);
 }
-.mitem:hover .mthumb img { transform:scale(1.05); }
+.mthumb::before {
+  content:'';
+  position:absolute; inset:0;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255,255,255,.55), transparent 55%),
+    radial-gradient(circle at 75% 80%, rgba(0,0,0,.04), transparent 55%);
+  pointer-events:none;
+}
+.mthumb::after {
+  content:'CYBER SAFE';
+  position:absolute;
+  bottom:10px; left:0; right:0;
+  text-align:center;
+  font-family:'Nunito',sans-serif;
+  font-size:.56rem;
+  letter-spacing:.18em;
+  color:rgba(26,18,9,.22);
+  font-weight:900;
+}
+.mitem:hover .mthumb [data-icon] {
+  transform:scale(1.1) rotate(-3deg);
+}
 .mbody { padding:16px; }
 .mbody h4 {
   font-size:.86rem; color:var(--ink);
