@@ -64,15 +64,15 @@ statEls.forEach(el => statIO.observe(el));
 
 // ===== COPBOT ROTATING TIPS =====
 const tips = [
-  '🔒 Never share your OTP — not even with "police" callers!',
-  '📧 Check the sender email carefully before clicking any link.',
-  '🧠 Too good to be true? It is. It\'s a scam.',
-  '👨‍👩‍👧 Talk to your family about what you do online today.',
-  '🚨 Cyber crime? Call 1930 immediately — every minute counts.',
-  '🛡️ Enable 2FA on all your important accounts right now.',
-  '📱 Update your apps — outdated apps are easy targets.',
-  '🔑 Use a unique password for every important account.',
-  '👀 Strangers online are still strangers. Don\'t share personal info.',
+  'Never share your OTP — not even with "police" callers.',
+  'Check the sender email carefully before clicking any link.',
+  'Too good to be true? It is. It\'s a scam.',
+  'Talk to your family about what you do online today.',
+  'Cyber crime? Call 1930 immediately — every minute counts.',
+  'Enable 2FA on all your important accounts right now.',
+  'Update your apps — outdated apps are easy targets.',
+  'Use a unique password for every important account.',
+  'Strangers online are still strangers. Don\'t share personal info.',
 ];
 let tipIdx = 0;
 const tipEl = document.getElementById('floatTipText');
