@@ -889,8 +889,8 @@ section { padding:96px 5%; }
   background:linear-gradient(135deg, var(--ink) 0%, #281a0e 100%);
   border-radius:24px;
   padding:56px 60px;
-  display:grid; grid-template-columns:1fr auto;
-  gap:44px; align-items:center;
+  display:grid; grid-template-columns:1.4fr 1fr;
+  gap:56px; align-items:center;
   margin-top:44px;
   position:relative; overflow:hidden;
 }
@@ -926,16 +926,60 @@ section { padding:96px 5%; }
 .family-copbot {
   position:relative;
   text-align:center;
-  flex-shrink:0;
-  padding:20px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:18px;
+  align-self:center;
+  padding:24px 20px 16px;
+  background:linear-gradient(180deg, #FFF8EE 0%, #FAEFDB 100%);
+  border:1px solid rgba(232,101,42,.25);
+  border-radius:22px;
+  box-shadow:
+    0 24px 60px rgba(0,0,0,.45),
+    0 0 0 1px rgba(255,255,255,.04),
+    0 -2px 0 rgba(232,101,42,.4) inset;
+  overflow:hidden;
+}
+.family-copbot::before {
+  content:'';
+  position:absolute;
+  top:-30%; left:50%;
+  width:160%; height:80%;
+  transform:translateX(-50%);
+  background:radial-gradient(ellipse at center, rgba(232,101,42,.18) 0%, transparent 60%);
+  pointer-events:none;
+  z-index:0;
+}
+.family-copbot .copbot-portrait {
+  position:relative;
+  z-index:1;
+  width:220px;
+  max-width:100%;
+  margin:0 auto;
+  /* multiply blends the image's white background into the cream card */
+  mix-blend-mode:multiply;
+  filter:none;
 }
 .family-copbot p {
-  color:rgba(255,255,255,.45);
-  font-size:.74rem; margin-top:10px;
-  font-weight:700; font-family:'Nunito',sans-serif;
+  position:relative;
+  z-index:1;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-top:4px;
+  padding:6px 14px;
+  background:var(--orange);
+  border-radius:100px;
+  color:#fff;
+  font-size:.7rem;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-family:'Nunito',sans-serif;
+  box-shadow:0 4px 12px rgba(232,101,42,.35);
+}
+.family-copbot p::before {
+  content:'';
+  width:6px; height:6px;
+  background:#fff;
+  border-radius:50%;
 }
 
 /* =============== MERCH =============== */
