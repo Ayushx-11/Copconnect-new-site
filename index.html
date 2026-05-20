@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CopConnect — Real Lives. Real Safety. Real Change.</title>
+<meta name="description" content="India's most human-centred cyber safety movement. Bridging citizens, CCIOs, and law enforcement.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 54'%3E%3Crect width='44' height='54' rx='10' fill='%23E8652A'/%3E%3Ccircle cx='22' cy='20' r='8' fill='white'/%3E%3Cline x1='22' y1='28' x2='22' y2='42' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- AMBIENT NOISE OVERLAY -->
+<div class="noise"></div>
+
+<!-- FLOATING COPBOT -->
+<button class="float-cop" aria-label="Open CopBot tip">
+  <div class="float-pulse"></div>
+  <div class="float-avatar">
+    <svg width="28" height="34" viewBox="0 0 56 68" fill="none" aria-hidden="true">
+      <circle cx="28" cy="13" r="11" fill="white"/>
+      <path d="M17 8 Q17 2 28 1 Q39 2 39 8 Z" fill="rgba(255,255,255,0.4)"/>
+      <circle cx="24" cy="12" r="2" fill="#E8652A"/><circle cx="32" cy="12" r="2" fill="#E8652A"/>
+      <path d="M23 19 Q28 23 33 19" stroke="white" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <line x1="28" y1="24" x2="28" y2="48" stroke="white" stroke-width="3" stroke-linecap="round"/>
+      <line x1="28" y1="32" x2="14" y2="42" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="28" y1="32" x2="42" y2="42" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="28" y1="48" x2="18" y2="65" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="28" y1="48" x2="38" y2="65" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="float-tip" id="floatTip">
+    <strong>CopBot says</strong>
+    <span id="floatTipText">Never share your OTP — not even with someone claiming to be police!</span>
+  </div>
+</button>
+
+<!-- NAV -->
+<nav>
+  <a href="#home" class="logo">
+    <div class="logo-mark">
+      <svg width="22" height="27" viewBox="0 0 44 54" fill="none" aria-hidden="true">
+        <circle cx="22" cy="10" r="9" fill="white"/>
+        <path d="M13 6 Q13 0 22 0 Q31 0 31 6 Z" fill="rgba(255,255,255,0.4)"/>
+        <circle cx="19" cy="9" r="1.5" fill="#E8652A"/><circle cx="25" cy="9" r="1.5" fill="#E8652A"/>
+        <path d="M18 15 Q22 18 26 15" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <line x1="22" y1="19" x2="22" y2="38" stroke="white" stroke-width="3" stroke-linecap="round"/>
+        <line x1="22" y1="25" x2="11" y2="33" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="22" y1="25" x2="33" y2="33" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="22" y1="38" x2="14" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="22" y1="38" x2="30" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="logo-text">Cop<span>Connect</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#platform">Platform</a></li>
+    <li><a href="#learning">Learning</a></li>
+    <li><a href="#ccio">CC/IO</a></li>
+    <li><a href="#tips">Safety Tips</a></li>
+    <li><a href="#merch">Merch</a></li>
+    <li><a href="#sessions">Book</a></li>
+  </ul>
+  <a href="#platform" class="nav-btn">Portal Login →</a>
+  <button class="nav-toggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hero-bg">
+    <div class="hero-grid-pattern"></div>
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+  </div>
+
+  <div class="inner hero-inner">
+    <div class="hero-left">
+      <div class="hero-pill">
+        <span class="dot"></span>
+        Active across India · Powered by ISAC Foundation
+      </div>
+      <h1 class="hero-h1">
+        Real People.<br>
+        Real Safety.<br>
+        <span class="serif-italic">Real</span> <span class="orange">Change.</span>
+      </h1>
+      <p class="hero-sub">CopConnect bridges the gap between cyber victims and law enforcement — building a culture where every family, school, and community feels safe online.</p>
+      <div class="hero-btns">
+        <a href="#platform" class="btn btn-orange">
+          Access the Portal
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10m0 0L8 3m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#sessions" class="btn btn-ghost">Book a Session</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-avatars">
+          <span class="ta" style="background:#FAD5C2">🛡️</span>
+          <span class="ta" style="background:#DBEAFE">👮</span>
+          <span class="ta" style="background:#D1FAE5">🏫</span>
+          <span class="ta" style="background:#FEF3C7">👨‍👩‍👧</span>
+        </div>
+        <div>
+          <strong>Trusted by 25,000+</strong> citizens, students &amp; families
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <!-- Big bento mascot card -->
+      <div class="hero-bento">
+        <div class="hb-card hb-main">
+          <div class="hb-glow"></div>
+          <div class="hb-bubble hb-bubble-tl">
+            <span class="emo">🔒</span>
+            Think before you click — phishing is the #1 trap!
+          </div>
+          <div class="hb-bubble hb-bubble-br">
+            <span class="emo">👨‍👩‍👧</span>
+            Families that talk about safety stay safer!
+          </div>
+          <svg class="stickman-hero" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <ellipse cx="90" cy="210" rx="36" ry="9" fill="rgba(37,99,235,0.1)"/>
+            <path d="M78 158 Q72 182 64 197" stroke="#2563EB" stroke-width="5.5" stroke-linecap="round"/>
+            <path d="M102 158 Q108 182 116 197" stroke="#2563EB" stroke-width="5.5" stroke-linecap="round"/>
+            <ellipse cx="63" cy="198" rx="9" ry="5" fill="#2563EB" opacity=".6"/>
+            <ellipse cx="117" cy="198" rx="9" ry="5" fill="#2563EB" opacity=".6"/>
+            <path d="M90 78 L90 158" stroke="#2563EB" stroke-width="5.5" stroke-linecap="round"/>
+            <path d="M90 97 Q68 84 54 68" stroke="#2563EB" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="52" cy="66" r="7" fill="#2563EB"/>
+            <path d="M90 97 Q112 86 126 72" stroke="#2563EB" stroke-width="5" stroke-linecap="round"/>
+            <path d="M120 56 L133 56 L133 76 L126.5 82 L120 76 Z" fill="#2563EB"/>
+            <path d="M123 63 L130 63" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M126.5 60 L126.5 66" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            <path d="M80 108 Q90 116 100 108" stroke="rgba(37,99,235,0.3)" stroke-width="1.5" fill="none"/>
+            <path d="M80 118 L90 112 L100 118 L98 132 L90 137 L82 132 Z" fill="#E8652A"/>
+            <text x="90" y="128" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="Nunito,sans-serif">CC</text>
+            <rect x="86" y="72" width="8" height="8" rx="3" fill="#2563EB"/>
+            <circle cx="90" cy="52" r="27" fill="white" stroke="#2563EB" stroke-width="3"/>
+            <path d="M63 46 Q66 25 90 24 Q114 25 117 46" fill="#2563EB" opacity=".1"/>
+            <path d="M63 42 Q63 30 90 28 Q117 30 117 42 Z" fill="#1E40AF"/>
+            <rect x="61" y="41" width="58" height="7" rx="3.5" fill="#2563EB"/>
+            <circle cx="90" cy="36" r="5.5" fill="#E8652A"/>
+            <text x="90" y="39.5" text-anchor="middle" fill="white" font-size="5.5" font-weight="bold" font-family="Nunito,sans-serif">CC</text>
+            <circle cx="81" cy="54" r="5.5" fill="#2563EB"/>
+            <circle cx="99" cy="54" r="5.5" fill="#2563EB"/>
+            <circle cx="82" cy="53" r="2.8" fill="white"/>
+            <circle cx="100" cy="53" r="2.8" fill="white"/>
+            <circle cx="82.5" cy="53" r="1.3" fill="#1a1209"/>
+            <circle cx="100.5" cy="53" r="1.3" fill="#1a1209"/>
+            <path d="M80 66 Q90 74 100 66" stroke="#2563EB" stroke-width="3" stroke-linecap="round" fill="none"/>
+            <circle cx="75" cy="62" r="5" fill="#E8652A" opacity=".2"/>
+            <circle cx="105" cy="62" r="5" fill="#E8652A" opacity=".2"/>
+          </svg>
+          <div class="hb-caption">Meet <span>CopBot</span> — your cyber safety buddy</div>
+        </div>
+
+        <div class="hb-card hb-mini hb-helpline">
+          <div class="hb-mini-label">Cyber Helpline</div>
+          <div class="hb-mini-value">1930</div>
+          <div class="hb-mini-foot">24×7 · All India</div>
+        </div>
+
+        <div class="hb-card hb-mini hb-live">
+          <div class="live-dot"></div>
+          <div class="hb-mini-label">Live Now</div>
+          <div class="hb-mini-value-sm">1,446+ interventions this year</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating stats row -->
+  <div class="inner">
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-num" data-target="1446">0</div>
+        <div class="hstat-label">Interventions</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num" data-target="25455">0</div>
+        <div class="hstat-label">Lives Protected</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num" data-target="1000">0</div>
+        <div class="hstat-label">CCIOs Trained</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-num" data-target="200000">0</div>
+        <div class="hstat-label">Indirect Reach</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>ISAC Foundation</span><span>·</span>
+    <span>Cyber Crime Helpline 1930</span><span>·</span>
+    <span>1,000+ CCIOs across India</span><span>·</span>
+    <span>293 NCC Cadet CCIOs</span><span>·</span>
+    <span>Schools · Corporates · RWAs · LEA</span><span>·</span>
+    <span>ISAC Foundation</span><span>·</span>
+    <span>Cyber Crime Helpline 1930</span><span>·</span>
+    <span>1,000+ CCIOs across India</span><span>·</span>
+    <span>293 NCC Cadet CCIOs</span><span>·</span>
+    <span>Schools · Corporates · RWAs · LEA</span><span>·</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="inner">
+    <div class="section-head">
+      <div class="tag">About CopConnect</div>
+      <h2 class="sec-title">Protecting the World<br>from <span class="serif-italic">Cyber Crimes.</span></h2>
+      <p class="sec-body">India's most human-centred cyber safety movement. Because cyber safety isn't a technology problem — it's a people problem. And people solve people problems together.</p>
+    </div>
+
+    <div class="about-bento">
+      <div class="ab-card ab-large">
+        <div class="ab-emoji">🤝</div>
+        <h3>Forging Trust with Law Enforcement</h3>
+        <p>We create real pathways between victims and cyber police — because the gap between them is where criminals hide.</p>
+        <div class="ab-arc"></div>
+      </div>
+
+      <div class="ab-card ab-orange">
+        <div class="ab-emoji">🛡️</div>
+        <h3>Cyber Safety Culture</h3>
+        <p>From daily habits to community programs, we make cyber safety something everyone owns.</p>
+      </div>
+
+      <div class="ab-card">
+        <div class="ab-emoji">📣</div>
+        <h3>Grassroots Advocacy</h3>
+        <p>Our 1,000+ trained CCIOs work at community level — in schools, RWAs, and offices.</p>
+      </div>
+
+      <div class="ab-card ab-dark">
+        <div class="ab-emoji">👨‍👩‍👧</div>
+        <h3>Families on One Platform</h3>
+        <p>Parents and kids learning cyber safety together — because a safe home speaks digital.</p>
+      </div>
+
+      <div class="ab-card ab-pillars">
+        <div class="pillars">
+          <div class="pillar"><span>🏫</span><strong>Schools</strong><small>Ages 6–18</small></div>
+          <div class="pillar"><span>🏢</span><strong>Corporates</strong><small>Employee hygiene</small></div>
+          <div class="pillar"><span>🏘️</span><strong>RWAs</strong><small>Senior safety</small></div>
+          <div class="pillar"><span>👮</span><strong>LEA</strong><small>Direct bridges</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM -->
+<section id="platform">
+  <div class="inner">
+    <div class="section-head section-head-center">
+      <div class="tag">Digital Platform</div>
+      <h2 class="sec-title">Scroll Control <span class="serif-italic">Platform</span></h2>
+      <p class="sec-body">Your personal cyber safety command centre — report incidents, find CCIOs, and stay ahead of threats, all in one place.</p>
+    </div>
+
+    <div class="plat-hero">
+      <div class="plat-hero-bg"></div>
+      <div class="plat-hero-content">
+        <div class="plat-hero-pill">🖥️ One Platform</div>
+        <h2>One Platform.<br>Every Community.</h2>
+        <p>Connects citizens, CCIOs, and law enforcement in real time — reporting easy, help fast, safety accessible.</p>
+        <a href="#" class="btn btn-white">Launch Platform →</a>
+      </div>
+      <div class="plat-hero-deco">
+        <div class="deco-card deco-1">📍 CCIO near you · 0.8 km</div>
+        <div class="deco-card deco-2">🚨 Active scam alert</div>
+        <div class="deco-card deco-3">✅ Case #4421 resolved</div>
+      </div>
+    </div>
+
+    <div class="feats">
+      <div class="feat">
+        <div class="feat-icon">📝</div>
+        <div class="feat-n">01</div>
+        <h3>Incident Reporting</h3>
+        <p>Report cyber crimes quickly and track your case with real-time updates from law enforcement.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🔍</div>
+        <div class="feat-n">02</div>
+        <h3>CCIO Directory</h3>
+        <p>Find your nearest trained Cyber Community Intelligence Officer for in-person support.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">📚</div>
+        <div class="feat-n">03</div>
+        <h3>Resource Hub</h3>
+        <p>Curated guides and advisories from ISAC Foundation on emerging cyber threats.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🚨</div>
+        <div class="feat-n">04</div>
+        <h3>Community Alerts</h3>
+        <p>Real-time alerts about active scams, phishing campaigns, and threats nearby.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">👨‍👩‍👧</div>
+        <div class="feat-n">05</div>
+        <h3>Family Safety Mode</h3>
+        <p>A shared dashboard for parents and children to monitor activity and learn together.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">📞</div>
+        <div class="feat-n">06</div>
+        <h3>LEA Connect</h3>
+        <p>Direct, verified connection to law enforcement cyber cells. No confusion.</p>
+      </div>
+    </div>
+
+    <div class="portal-panel">
+      <div class="portal-left">
+        <div class="portal-pill">🔐 Portal Access</div>
+        <h3>Sign in to the Scroll Control Platform</h3>
+        <p class="portal-desc">Citizen · CCIO · Law Enforcement</p>
+        <form onsubmit="event.preventDefault();this.querySelector('button').innerText='Demo only ✓'">
+          <div class="pif"><input type="email" placeholder="Email or Mobile Number" required></div>
+          <div class="pif"><input type="password" placeholder="Password" required></div>
+          <button type="submit" class="btn btn-orange portal-btn">Sign In →</button>
+        </form>
+        <p class="portal-foot">New here? <a href="#">Register as CCIO</a> or <a href="#">Community Member</a></p>
+      </div>
+      <div class="portal-right">
+        <h3>How It Works</h3>
+        <div class="pistep"><div class="psn">1</div><div><h4>Register Your Profile</h4><p>Create a verified account as citizen, CCIO, or officer.</p></div></div>
+        <div class="pistep"><div class="psn">2</div><div><h4>Report or Connect</h4><p>File an incident or connect with your local CCIO.</p></div></div>
+        <div class="pistep"><div class="psn">3</div><div><h4>Track &amp; Resolve</h4><p>Follow your case in real-time with guidance.</p></div></div>
+        <div class="pistep"><div class="psn">4</div><div><h4>Learn &amp; Stay Safe</h4><p>Access learning modules to prevent future incidents.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARNING -->
+<section id="learning">
+  <div class="inner">
+    <div class="section-head">
+      <div class="tag">Junior Certification</div>
+      <h2 class="sec-title">Micro Video <span class="serif-italic">Learning Hub</span></h2>
+      <p class="sec-body">3–7 minute lessons that make cyber safety click — for every age, every background, every family.</p>
+    </div>
+
+    <div class="vgrid">
+      <article class="vcard">
+        <div class="vthumb" style="background:linear-gradient(135deg,#2563EB,#1E3A8A)">
+          <div class="vplay">▶</div>
+          <div class="vdur">3:24</div>
+        </div>
+        <div class="vbody">
+          <div class="vtag">Basics</div>
+          <h4>What is a Strong Password?</h4>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="vthumb" style="background:linear-gradient(135deg,#E8652A,#9A3412)">
+          <div class="vplay">▶</div>
+          <div class="vdur">4:15</div>
+        </div>
+        <div class="vbody">
+          <div class="vtag">Phishing</div>
+          <h4>Spot the Scam — Don't Get Hooked</h4>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="vthumb" style="background:linear-gradient(135deg,#16A34A,#14532D)">
+          <div class="vplay">▶</div>
+          <div class="vdur">5:02</div>
+        </div>
+        <div class="vbody">
+          <div class="vtag">Privacy</div>
+          <h4>Think Before You Post</h4>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="vthumb" style="background:linear-gradient(135deg,#7C3AED,#2563EB)">
+          <div class="vplay">▶</div>
+          <div class="vdur">6:18</div>
+        </div>
+        <div class="vbody">
+          <div class="vtag">For Kids</div>
+          <h4>Stranger Danger Goes Online Too</h4>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="vthumb" style="background:linear-gradient(135deg,#0891B2,#0C4A6E)">
+          <div class="vplay">▶</div>
+          <div class="vdur">4:44</div>
+        </div>
+        <div class="vbody">
+          <div class="vtag">For Parents</div>
+          <h4>Parental Controls Made Easy</h4>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="vthumb" style="background:linear-gradient(135deg,#E8652A,#7C3AED)">
+          <div class="vplay">▶</div>
+          <div class="vdur">3:55</div>
+        </div>
+        <div class="vbody">
+          <div class="vtag">Finance</div>
+          <h4>UPI &amp; OTP Fraud — Protect Your Money</h4>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="vthumb" style="background:linear-gradient(135deg,#2563EB,#16A34A)">
+          <div class="vplay">▶</div>
+          <div class="vdur">5:30</div>
+        </div>
+        <div class="vbody">
+          <div class="vtag">Bullying</div>
+          <h4>Cyberbullying — Recognize &amp; Report</h4>
+        </div>
+      </article>
+      <article class="vcard">
+        <div class="vthumb" style="background:linear-gradient(135deg,#1E3A8A,#E8652A)">
+          <div class="vplay">▶</div>
+          <div class="vdur">7:00</div>
+        </div>
+        <div class="vbody">
+          <div class="vtag">Advanced</div>
+          <h4>2FA &amp; Account Security</h4>
+        </div>
+      </article>
+    </div>
+
+    <div class="cert-strip">
+      <div class="cert-left">
+        <div class="cert-badge-3d">
+          <div class="cb-ring"></div>
+          <div class="cb-core">🏅</div>
+        </div>
+      </div>
+      <div class="cert-right">
+        <div class="cert-pill">Free Enrollment · Made for Ages 8–18</div>
+        <h3>Junior Cyber Safety Certification</h3>
+        <p>Complete 12 micro-modules, pass the assessment, and earn your certificate — recognised by CopConnect and partner schools across India.</p>
+        <div class="ctags">
+          <span class="ctag">✓ 12 Modules</span>
+          <span class="ctag">✓ Age-Adaptive</span>
+          <span class="ctag">✓ Parent + Child Mode</span>
+          <span class="ctag">✓ Printable Certificate</span>
+        </div>
+        <a href="#" class="btn btn-white cert-btn">Start Learning Free →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CCIO -->
+<section id="ccio">
+  <div class="inner">
+    <div class="section-head">
+      <div class="tag">CC/IO Program</div>
+      <h2 class="sec-title">Become a Cyber Community<br><span class="serif-italic">Intelligence Officer</span></h2>
+      <p class="sec-body">CCIOs are community champions — trained people who bridge the gap between citizens and law enforcement at the grassroots level.</p>
+    </div>
+
+    <div class="ccio-grid">
+      <div class="ccio-tiers">
+        <div class="tier">
+          <div class="tier-top">
+            <div class="tier-badge">Entry Level</div>
+            <div class="tier-price">Free</div>
+          </div>
+          <h3>CCIO Associate</h3>
+          <p>For anyone who wants to protect their community. No tech background needed.</p>
+          <div class="perks">
+            <div class="pk">16-hour certification</div>
+            <div class="pk">Digital CCIO badge</div>
+            <div class="pk">Community resource kit</div>
+            <div class="pk">Monthly webinars</div>
+            <div class="pk">CCIO directory listing</div>
+          </div>
+        </div>
+
+        <div class="tier hot">
+          <div class="tier-top">
+            <div class="tier-badge tier-badge-hot">★ Most Popular</div>
+            <div class="tier-price">Free</div>
+          </div>
+          <h3>CCIO Professional</h3>
+          <p>For educators, NGO workers, and RWA leaders who want to drive real, measurable impact.</p>
+          <div class="perks">
+            <div class="pk">40-hour curriculum</div>
+            <div class="pk">Scroll Control access</div>
+            <div class="pk">Session facilitation kit</div>
+            <div class="pk">ISAC mentorship</div>
+            <div class="pk">Impact dashboard</div>
+            <div class="pk">LEA coordination</div>
+          </div>
+        </div>
+
+        <div class="tier">
+          <div class="tier-top">
+            <div class="tier-badge">NCC / Youth</div>
+            <div class="tier-price">Free</div>
+          </div>
+          <h3>CCIO Cadet</h3>
+          <p>A special track for NCC cadets joining the 293+ already serving as cyber safety ambassadors.</p>
+          <div class="perks">
+            <div class="pk">NCC-integrated curriculum</div>
+            <div class="pk">Campus ambassador role</div>
+            <div class="pk">Annual CC/IO Meetup</div>
+            <div class="pk">Service credit recognition</div>
+          </div>
+        </div>
+
+        <a href="#sessions" class="btn btn-orange ccio-btn">Apply to Become a CCIO →</a>
+      </div>
+
+      <aside class="impact-box">
+        <div class="impact-head">
+          <h3>CC/IO Impact</h3>
+          <span class="impact-sub">April 2025 – Present</span>
+        </div>
+        <div class="istat"><div class="istat-icon">👥</div><div><div class="istat-num">1,000+</div><div class="istat-lbl">CCIOs Trained</div></div></div>
+        <div class="istat"><div class="istat-icon">🎓</div><div><div class="istat-num">293</div><div class="istat-lbl">NCC Cadets as CCIOs</div></div></div>
+        <div class="istat"><div class="istat-icon">📍</div><div><div class="istat-num">222+</div><div class="istat-lbl">Awareness Sessions</div></div></div>
+        <div class="istat"><div class="istat-icon">🏆</div><div><div class="istat-num">1,446+</div><div class="istat-lbl">Total Interventions</div></div></div>
+        <div class="istat"><div class="istat-icon">🌐</div><div><div class="istat-num">2 Lakh+</div><div class="istat-lbl">Indirect Beneficiaries</div></div></div>
+        <div class="istat"><div class="istat-icon">💪</div><div><div class="istat-num">25,455+</div><div class="istat-lbl">Direct Beneficiaries</div></div></div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- TIPS -->
+<section id="tips">
+  <div class="inner">
+    <div class="tips-head">
+      <div class="tips-head-left">
+        <svg width="84" height="100" viewBox="0 0 76 90" fill="none" aria-hidden="true">
+          <ellipse cx="38" cy="86" rx="20" ry="6" fill="rgba(37,99,235,0.1)"/>
+          <line x1="38" y1="48" x2="38" y2="72" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+          <line x1="38" y1="56" x2="22" y2="66" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="38" y1="56" x2="54" y2="66" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="38" y1="72" x2="27" y2="88" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="38" y1="72" x2="49" y2="88" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round"/>
+          <circle cx="38" cy="26" r="20" fill="white" stroke="#2563EB" stroke-width="2.5"/>
+          <path d="M18 20 Q18 8 38 7 Q58 8 58 20 Z" fill="#1E40AF"/>
+          <rect x="17" y="19" width="42" height="5" rx="2.5" fill="#2563EB"/>
+          <circle cx="38" cy="14" r="4" fill="#E8652A"/>
+          <text x="38" y="17" text-anchor="middle" fill="white" font-size="5.5" font-weight="bold" font-family="Nunito,sans-serif">CC</text>
+          <circle cx="32" cy="27" r="3.5" fill="#2563EB"/><circle cx="44" cy="27" r="3.5" fill="#2563EB"/>
+          <circle cx="32.5" cy="26.5" r="1.8" fill="white"/><circle cx="44.5" cy="26.5" r="1.8" fill="white"/>
+          <path d="M30 36 Q38 41 46 36" stroke="#2563EB" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <circle cx="28" cy="33" r="4" fill="#E8652A" opacity=".2"/>
+          <circle cx="48" cy="33" r="4" fill="#E8652A" opacity=".2"/>
+        </svg>
+        <div>
+          <div class="tag">CopBot's Safety Guide</div>
+          <h2 class="sec-title">Cyber Safety Tips for <span class="serif-italic">Everyone</span></h2>
+          <p class="sec-body">Your friendly neighbourhood CopBot shares what every family needs to know.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tips-grid">
+      <div class="tip">
+        <div class="who">For Kids &amp; Teens</div>
+        <h3>Your Digital Footprint Never Disappears</h3>
+        <p>Everything you post leaves a trace. Ask yourself: would I be okay if Mum, Dad, or my teacher saw this?</p>
+        <div class="cop-quote">"Once it's online, it's online forever. Think before you type!"</div>
+      </div>
+      <div class="tip">
+        <div class="who">For Families</div>
+        <h3>Parents &amp; Kids: One Safety Team</h3>
+        <p>Families that talk openly about online experiences stay far better protected. Try a weekly "digital check-in."</p>
+        <div class="cop-quote">"When families stay connected, scammers stay out!"</div>
+      </div>
+      <div class="tip">
+        <div class="who">For Parents</div>
+        <h3>Know Your Child's Digital World</h3>
+        <p>You wouldn't let a stranger walk into your home. Don't let them into your child's phone. Learn the apps they use.</p>
+        <div class="cop-quote">"Awareness, not surveillance. Trust is your best parental control."</div>
+      </div>
+      <div class="tip">
+        <div class="who">Password Safety</div>
+        <h3>Your First Line of Defence</h3>
+        <p>Use a different password for every account. Enable two-factor authentication everywhere. Use a password manager.</p>
+        <div class="cop-quote">"123456 is not a password. Neither is your birthday!"</div>
+      </div>
+      <div class="tip">
+        <div class="who">UPI &amp; Finance</div>
+        <h3>Never Share Your OTP — Ever</h3>
+        <p>No bank, no UPI app, and no police officer will ever ask for your OTP or PIN on a call. If they do — hang up.</p>
+        <div class="cop-quote">"Real cops never ask for your OTP. That's how you spot fraud."</div>
+      </div>
+      <div class="tip">
+        <div class="who">Reporting Cyber Crime</div>
+        <h3>Know How to Report — Act Fast</h3>
+        <p>Been a victim? Call Cyber Crime Helpline <strong>1930</strong> or visit cybercrime.gov.in. The sooner you report, the better.</p>
+        <div class="cop-quote">"You are not alone. CopConnect walks with you every step."</div>
+      </div>
+    </div>
+
+    <div class="family-block">
+      <div class="family-bg"></div>
+      <div class="family-content">
+        <div class="family-text">
+          <div class="family-pill">👨‍👩‍👧‍👦 Family Safety Mode</div>
+          <h2>Parents &amp; Kids on the Same Platform</h2>
+          <p>CopConnect's Family Safety Mode brings parents and children onto a unified cyber safety dashboard. Learn together, set digital boundaries together, and build a home that's truly cyber-safe.</p>
+          <div class="fbtns">
+            <a href="#platform" class="btn btn-orange">Set Up Family Mode</a>
+            <a href="#learning" class="btn btn-ghost-light">Learn Together</a>
+          </div>
+        </div>
+        <div class="family-copbot">
+          <svg width="120" height="160" viewBox="0 0 88 116" fill="none" aria-hidden="true">
+            <ellipse cx="44" cy="111" rx="22" ry="6" fill="rgba(232,101,42,.18)"/>
+            <line x1="44" y1="52" x2="44" y2="86" stroke="#E8652A" stroke-width="4" stroke-linecap="round"/>
+            <line x1="44" y1="61" x2="26" y2="73" stroke="#E8652A" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="44" y1="61" x2="62" y2="73" stroke="#E8652A" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="44" y1="86" x2="33" y2="109" stroke="#E8652A" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="44" y1="86" x2="55" y2="109" stroke="#E8652A" stroke-width="3.5" stroke-linecap="round"/>
+            <circle cx="44" cy="28" r="22" fill="white" stroke="#E8652A" stroke-width="2.5"/>
+            <path d="M22 22 Q22 8 44 7 Q66 8 66 22 Z" fill="#C2410C"/>
+            <rect x="21" y="20" width="46" height="5.5" rx="2.75" fill="#E8652A"/>
+            <circle cx="38" cy="27" r="3.5" fill="#E8652A"/><circle cx="50" cy="27" r="3.5" fill="#E8652A"/>
+            <circle cx="38.5" cy="26.5" r="1.8" fill="white"/><circle cx="50.5" cy="26.5" r="1.8" fill="white"/>
+            <path d="M36 38 Q44 44 52 38" stroke="#E8652A" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="31" cy="34" r="5" fill="#E8652A" opacity=".2"/>
+            <circle cx="57" cy="34" r="5" fill="#E8652A" opacity=".2"/>
+          </svg>
+          <p>Family CopBot</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MERCH -->
+<section id="merch">
+  <div class="inner">
+    <div class="section-head">
+      <div class="tag">Merch Store</div>
+      <h2 class="sec-title">Wear Cyber Safety.<br><span class="serif-italic">Spread the Culture.</span></h2>
+      <p class="sec-body">Every CopConnect product is a conversation starter. Wear it, gift it, display it — and watch how cyber safety becomes part of everyday life.</p>
+    </div>
+
+    <div class="merch-note">
+      <div class="merch-note-icon">🤝</div>
+      <p>Every purchase funds a free cyber awareness session for an underserved community. <strong>Merchandise with a mission.</strong></p>
+    </div>
+
+    <div class="mgrid">
+      <div class="mitem">
+        <div class="mthumb" style="--mc:#FAD5C2">👕</div>
+        <div class="mbody">
+          <h4>CopBot Tee — "Think Before You Click"</h4>
+          <small>100% organic cotton · Blue stickman print</small>
+          <div class="mprice"><span class="pr">₹799</span><button class="add-btn">Add to Bag</button></div>
+        </div>
+      </div>
+      <div class="mitem">
+        <div class="mthumb" style="--mc:#DBEAFE">🧢</div>
+        <div class="mbody">
+          <h4>CCIO Cap — "I Protect My Community"</h4>
+          <small>Structured cap · Embroidered badge</small>
+          <div class="mprice"><span class="pr">₹599</span><button class="add-btn">Add to Bag</button></div>
+        </div>
+      </div>
+      <div class="mitem">
+        <div class="mthumb" style="--mc:#D1FAE5">🎒</div>
+        <div class="mbody">
+          <h4>Cyber Safe Kids Backpack</h4>
+          <small>For school-goers · Tip card included</small>
+          <div class="mprice"><span class="pr">₹1,299</span><button class="add-btn">Add to Bag</button></div>
+        </div>
+      </div>
+      <div class="mitem">
+        <div class="mthumb" style="--mc:#FEF3C7">☕</div>
+        <div class="mbody">
+          <h4>CopBot Mug — "My OTP is Mine"</h4>
+          <small>Ceramic · Dishwasher safe</small>
+          <div class="mprice"><span class="pr">₹449</span><button class="add-btn">Add to Bag</button></div>
+        </div>
+      </div>
+      <div class="mitem">
+        <div class="mthumb" style="--mc:#EDE9FE">📓</div>
+        <div class="mbody">
+          <h4>Cyber Safety Journal — Family Edition</h4>
+          <small>Prompts for parents &amp; kids</small>
+          <div class="mprice"><span class="pr">₹349</span><button class="add-btn">Add to Bag</button></div>
+        </div>
+      </div>
+      <div class="mitem">
+        <div class="mthumb" style="--mc:#FAD5C2">🪪</div>
+        <div class="mbody">
+          <h4>CCIO Starter Kit</h4>
+          <small>ID holder · Stickers · Cards</small>
+          <div class="mprice"><span class="pr">₹699</span><button class="add-btn">Add to Bag</button></div>
+        </div>
+      </div>
+      <div class="mitem">
+        <div class="mthumb" style="--mc:#DBEAFE">🖼️</div>
+        <div class="mbody">
+          <h4>Safety Poster Set (A3)</h4>
+          <small>Classrooms · Offices · RWAs</small>
+          <div class="mprice"><span class="pr">₹299</span><button class="add-btn">Add to Bag</button></div>
+        </div>
+      </div>
+      <div class="mitem mitem-bundle">
+        <div class="bundle-badge">Best Value</div>
+        <div class="mthumb" style="--mc:#FDF0E9">🎁</div>
+        <div class="mbody">
+          <h4>Family Safety Bundle</h4>
+          <small>Tee + mug + journal + poster</small>
+          <div class="mprice"><span class="pr">₹1,799</span><button class="add-btn">Add to Bag</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSIONS -->
+<section id="sessions">
+  <div class="inner">
+    <div class="section-head">
+      <div class="tag">Book a Session</div>
+      <h2 class="sec-title">Request a <span class="serif-italic">Cyber Awareness</span> Session</h2>
+      <p class="sec-body">Our CCIOs come to you. Choose your venue type and we'll match you with a trained officer for a session made for your community.</p>
+    </div>
+
+    <div class="vtypes">
+      <button class="vtype on" type="button">
+        <div class="vtype-icon">🏢</div>
+        <h4>Corporate</h4>
+        <p>Employee hygiene &amp; fraud prevention</p>
+      </button>
+      <button class="vtype" type="button">
+        <div class="vtype-icon">🏫</div>
+        <h4>School / College</h4>
+        <p>Student safety &amp; cyberbullying</p>
+      </button>
+      <button class="vtype" type="button">
+        <div class="vtype-icon">🏘️</div>
+        <h4>RWA / Society</h4>
+        <p>Senior scams &amp; UPI fraud</p>
+      </button>
+      <button class="vtype" type="button">
+        <div class="vtype-icon">🌐</div>
+        <h4>NGO / Govt</h4>
+        <p>Custom community sessions</p>
+      </button>
+    </div>
+
+    <form class="sform" onsubmit="event.preventDefault();alert('Demo only — submission disabled.')">
+      <div class="sform-head">
+        <h3>📋 Session Request Form</h3>
+        <p>Fill in the details and a CopConnect coordinator will reach you within 48 hours.</p>
+      </div>
+
+      <div class="frow">
+        <div class="fg"><label>Contact Person Name *</label><input type="text" placeholder="Your full name" required></div>
+        <div class="fg"><label>Organisation / Institution *</label><input type="text" placeholder="Company / School / RWA name" required></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Mobile Number *</label><input type="tel" placeholder="+91" required></div>
+        <div class="fg"><label>Email Address *</label><input type="email" placeholder="you@organisation.com" required></div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>City / Location *</label><input type="text" placeholder="Bengaluru, Mumbai…" required></div>
+        <div class="fg">
+          <label>Expected Audience Size</label>
+          <select>
+            <option>Select range</option>
+            <option>Under 25</option>
+            <option>25–100</option>
+            <option>100–500</option>
+            <option>500+</option>
+          </select>
+        </div>
+      </div>
+      <div class="frow">
+        <div class="fg"><label>Preferred Date</label><input type="date"></div>
+        <div class="fg">
+          <label>Session Format</label>
+          <select>
+            <option>In-person</option>
+            <option>Virtual / Online</option>
+            <option>Hybrid</option>
+          </select>
+        </div>
+      </div>
+      <div class="fg">
+        <label>Primary Topic of Interest</label>
+        <select>
+          <option>General Cyber Safety &amp; Hygiene</option>
+          <option>UPI / Financial Fraud Prevention</option>
+          <option>Social Media Safety &amp; Privacy</option>
+          <option>Cyberbullying Awareness</option>
+          <option>Senior Citizen Cyber Safety</option>
+          <option>Child Online Protection</option>
+          <option>Phishing &amp; Scam Awareness</option>
+          <option>Incident Reporting &amp; LEA Connect</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label>Special Requirements or Notes</label>
+        <textarea placeholder="Tell us about your audience, specific concerns, accessibility needs…"></textarea>
+      </div>
+
+      <div class="sform-foot">
+        <button type="submit" class="btn btn-orange sform-submit">Submit Session Request →</button>
+        <p>🔒 Your information is secure. Sessions are subsidised for schools and NGOs.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="inner">
+    <div class="fc-card">
+      <div class="fc-bg"></div>
+      <h2>Build a Safer India.<br><span class="serif-italic">One Community at a Time.</span></h2>
+      <p>Join 1,000+ CCIOs, 293 NCC Cadets, and 25,000+ citizens making cyber safety part of everyday life.</p>
+      <div class="fc-btns">
+        <a href="#ccio" class="btn btn-white">Become a CCIO →</a>
+        <a href="#platform" class="btn btn-ghost-light">Open Platform</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="inner footer-grid">
+    <div class="fb">
+      <a href="#home" class="logo">
+        <div class="logo-mark">
+          <svg width="20" height="25" viewBox="0 0 44 54" fill="none" aria-hidden="true">
+            <circle cx="22" cy="10" r="9" fill="white"/>
+            <line x1="22" y1="19" x2="22" y2="38" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <line x1="22" y1="25" x2="11" y2="33" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="22" y1="25" x2="33" y2="33" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="22" y1="38" x2="14" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="22" y1="38" x2="30" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="logo-text logo-text-white">Cop<span>Connect</span></span>
+      </a>
+      <p class="footer-desc">Bridging the gap between cyber victims and law enforcement. Building a culture of cyber safety, one community at a time.</p>
+      <div class="footer-helpline">
+        <small>Cyber Crime Helpline</small>
+        <strong>1930</strong>
+      </div>
+      <div class="socials">
+        <a href="#" class="soc" aria-label="X">𝕏</a>
+        <a href="#" class="soc" aria-label="LinkedIn">in</a>
+        <a href="#" class="soc" aria-label="Facebook">f</a>
+        <a href="#" class="soc" aria-label="Instagram">📸</a>
+        <a href="#" class="soc" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div class="fc">
+      <h4>Platform</h4>
+      <a href="#platform">Scroll Control Portal</a>
+      <a href="#platform">Report Cyber Crime</a>
+      <a href="#platform">CCIO Directory</a>
+      <a href="#platform">Alert Network</a>
+      <a href="#platform">Family Safety Mode</a>
+    </div>
+    <div class="fc">
+      <h4>Programs</h4>
+      <a href="#ccio">Become a CCIO</a>
+      <a href="#learning">Micro Video Learning</a>
+      <a href="#learning">Junior Certification</a>
+      <a href="#sessions">Book a Session</a>
+      <a href="#merch">Merchandise</a>
+    </div>
+    <div class="fc">
+      <h4>About</h4>
+      <a href="#about">Our Mission</a>
+      <a href="#about">Impact Numbers</a>
+      <a href="#">ISAC Foundation</a>
+      <a href="#">CC/IO Meetup 2026</a>
+      <a href="#">Contact Us</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+  <div class="inner footer-bottom">
+    <p>© 2026 CopConnect / ISAC Foundation. All rights reserved.</p>
+    <p>Resilience begins with awareness. 🛡️</p>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
