@@ -277,14 +277,16 @@ section { padding:96px 5%; }
 }
 .hero-image-slot {
   width:100%;
-  aspect-ratio:4 / 5;
+  max-width:460px;
+  aspect-ratio:5 / 4;
   background:#fff;
   border:2px dashed var(--orange-lt);
-  border-radius:28px;
+  border-radius:24px;
   display:flex; align-items:center; justify-content:center;
-  box-shadow:0 16px 48px rgba(0,0,0,.06);
+  box-shadow:0 12px 36px rgba(0,0,0,.06);
   position:relative;
   overflow:hidden;
+  margin:0 auto;
 }
 .hero-image-slot::before {
   content:'';
