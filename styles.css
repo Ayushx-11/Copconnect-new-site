@@ -277,46 +277,27 @@ section { padding:96px 5%; }
 }
 .hero-image-slot {
   width:100%;
-  max-width:460px;
+  max-width:480px;
   aspect-ratio:5 / 4;
-  background:#fff;
-  border:2px dashed var(--orange-lt);
   border-radius:24px;
-  display:flex; align-items:center; justify-content:center;
-  box-shadow:0 12px 36px rgba(0,0,0,.06);
   position:relative;
   overflow:hidden;
   margin:0 auto;
+  box-shadow:0 18px 48px rgba(26,18,9,.14);
+  background:var(--cream-dark);
 }
-.hero-image-slot::before {
+.hero-image-slot img {
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .6s var(--ease);
+}
+.hero-image-slot:hover img { transform:scale(1.03); }
+.hero-image-slot::after {
   content:'';
   position:absolute; inset:0;
-  background:
-    radial-gradient(circle at 80% 20%, var(--orange-pale) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, var(--blue-lt) 0%, transparent 50%);
-  opacity:.4;
-}
-.hero-image-inner {
-  position:relative; z-index:1;
-  text-align:center;
-  color:var(--muted);
-  padding:24px;
-}
-.hero-image-inner [data-icon] {
-  width:56px; height:56px;
-  color:var(--orange-lt);
-  margin-bottom:14px;
-}
-.hero-image-inner span {
-  display:block;
-  font-family:'Nunito',sans-serif;
-  font-weight:800; font-size:1rem;
-  color:var(--ink-mid);
-  margin-bottom:4px;
-}
-.hero-image-inner small {
-  font-size:.78rem;
-  color:var(--muted);
+  background:linear-gradient(180deg, transparent 50%, rgba(26,18,9,.08));
+  pointer-events:none;
 }
 
 /* =============== ABOUT =============== */
@@ -584,10 +565,20 @@ section { padding:96px 5%; }
   aspect-ratio:16/9;
   position:relative;
   display:flex; align-items:center; justify-content:center;
+  background:var(--cream-dark);
+  overflow:hidden;
 }
+.vthumb img {
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform .5s var(--ease);
+}
+.vcard:hover .vthumb img { transform:scale(1.05); }
 .vthumb::before {
   content:''; position:absolute; inset:0;
-  background:radial-gradient(circle at center, transparent 40%, rgba(0,0,0,.22));
+  background:linear-gradient(180deg, rgba(0,0,0,.15) 0%, rgba(0,0,0,.45) 100%);
+  z-index:1;
 }
 .vplay {
   width:48px; height:48px;
@@ -948,23 +939,16 @@ section { padding:96px 5%; }
 .mthumb {
   aspect-ratio:1;
   background:var(--cream);
-  display:flex; align-items:center; justify-content:center;
   position:relative;
-  transition:transform .35s var(--ease);
-  color:var(--ink-mid);
+  overflow:hidden;
 }
-.mthumb [data-icon] { width:60px; height:60px; }
-.mthumb::after {
-  content:'CYBER SAFE';
-  position:absolute;
-  bottom:10px;
-  font-family:'Nunito',sans-serif;
-  font-size:.55rem;
-  letter-spacing:.16em;
-  color:rgba(26,18,9,.16);
-  font-weight:800;
+.mthumb img {
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover;
+  transition:transform .5s var(--ease);
 }
-.mitem:hover .mthumb { transform:scale(1.03); }
+.mitem:hover .mthumb img { transform:scale(1.05); }
 .mbody { padding:16px; }
 .mbody h4 {
   font-size:.86rem; color:var(--ink);
