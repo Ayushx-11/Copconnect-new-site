@@ -59,20 +59,23 @@ nav.scrolled {
   background:rgba(255,255,255,.95);
   box-shadow:0 6px 24px rgba(26,18,9,.06);
 }
-.logo { display:flex; align-items:center; text-decoration:none; }
+.logo { display:flex; align-items:center; text-decoration:none; flex-shrink:0; }
 .logo-img {
-  height:44px;
+  height:36px;
   width:auto;
+  max-width:170px;
   display:block;
+  object-fit:contain;
   transition:transform .25s var(--ease);
 }
 .logo:hover .logo-img { transform:scale(1.04); }
 .logo-img-inverted {
   filter:brightness(0) invert(1);
   opacity:.92;
-  height:38px;
+  height:34px;
+  max-width:160px;
 }
-/* legacy classes kept for backwards-compat — no-ops on the page now */
+/* legacy — no-ops on the page now */
 .logo-mark, .logo-text, .logo-text-white { display:none; }
 .nav-links {
   list-style:none;
