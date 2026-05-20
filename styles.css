@@ -77,6 +77,39 @@ nav.scrolled {
 }
 /* legacy — no-ops on the page now */
 .logo-mark, .logo-text, .logo-text-white { display:none; }
+
+/* =============== COPBOT (cop face cropped from lockup logo) =============== */
+.copbot-icon {
+  display:inline-block;
+  position:relative;
+  overflow:hidden;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 4px 14px rgba(26,18,9,.12);
+  flex-shrink:0;
+}
+.copbot-icon img {
+  position:absolute;
+  /* Lockup logo is 1242×310. Face is in the left ~30% of the image.
+     Scale image so it's 3.36× the container width — that makes the
+     face roughly the container width, and we shift left to center it. */
+  width:336%;
+  max-width:none;
+  height:auto;
+  left:-8%;
+  top:50%;
+  transform:translateY(-50%);
+  pointer-events:none;
+  user-select:none;
+}
+.copbot-icon.size-sm  { width:42px;  height:42px; }
+.copbot-icon.size-md  { width:72px;  height:72px; }
+.copbot-icon.size-lg  { width:96px;  height:96px; }
+.copbot-icon.size-xl  { width:120px; height:120px; }
+.float-avatar .copbot-icon {
+  background-color:transparent;
+  box-shadow:none;
+}
 .nav-links {
   list-style:none;
   display:flex; align-items:center; gap:4px;
