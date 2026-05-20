@@ -113,50 +113,119 @@
 
     <div class="hero-right">
       <div class="hero-bento">
-        <div class="hb-card hb-main">
+        <!-- Floating teaser cards anchored to the mockup -->
+        <div class="hb-bubble hb-bubble-tl">
+          <div class="bub-icon"><i data-icon="lock"></i></div>
+          <div>
+            <strong>End-to-end secure</strong>
+            <span>Reports stay confidential</span>
+          </div>
+        </div>
+        <div class="hb-bubble hb-bubble-br">
+          <div class="bub-icon bub-icon-green"><i data-icon="check"></i></div>
+          <div>
+            <strong>Case resolved</strong>
+            <span>UPI fraud · 12 min ago</span>
+          </div>
+        </div>
+
+        <!-- Product mockup -->
+        <div class="hb-card hb-main hb-mockup">
           <div class="hb-glow"></div>
-          <div class="hb-bubble hb-bubble-tl">
-            <i data-icon="lock" class="ico-md"></i>
-            Think before you click — phishing is the #1 trap!
+
+          <!-- Browser chrome -->
+          <div class="mock-chrome">
+            <div class="mock-dots"><span></span><span></span><span></span></div>
+            <div class="mock-url">
+              <i data-icon="lock" class="ico-xs"></i>
+              scrollcontrol.copconnect.in
+            </div>
           </div>
-          <div class="hb-bubble hb-bubble-br">
-            <i data-icon="family" class="ico-md"></i>
-            Families that talk about safety stay safer!
+
+          <!-- Mock app screen -->
+          <div class="mock-screen">
+            <div class="mock-header">
+              <div class="mock-brand">
+                <div class="mock-brand-mark">
+                  <svg width="18" height="22" viewBox="0 0 44 54" fill="none" aria-hidden="true">
+                    <circle cx="22" cy="10" r="9" fill="white"/>
+                    <line x1="22" y1="19" x2="22" y2="38" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    <line x1="22" y1="25" x2="11" y2="33" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="22" y1="25" x2="33" y2="33" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="22" y1="38" x2="14" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="22" y1="38" x2="30" y2="52" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="mock-brand-title">Scroll Control</div>
+                  <div class="mock-brand-sub"><span class="mock-live-dot"></span> Live · Bengaluru</div>
+                </div>
+              </div>
+              <div class="mock-avatar"><i data-icon="users"></i></div>
+            </div>
+
+            <div class="mock-stats">
+              <div class="ms">
+                <span class="ms-lbl">Reports</span>
+                <span class="ms-val">1,446</span>
+              </div>
+              <div class="ms-divider"></div>
+              <div class="ms">
+                <span class="ms-lbl">Resolved</span>
+                <span class="ms-val ms-val-green">92%</span>
+              </div>
+              <div class="ms-divider"></div>
+              <div class="ms">
+                <span class="ms-lbl">CCIOs</span>
+                <span class="ms-val">1,000+</span>
+              </div>
+            </div>
+
+            <div class="mock-row mock-row-alert">
+              <div class="mock-ic"><i data-icon="alert"></i></div>
+              <div class="mock-row-body">
+                <div class="mock-row-title">New scam alert nearby</div>
+                <div class="mock-row-sub">UPI impersonation · 12 reports today</div>
+              </div>
+              <div class="mock-tag">Act</div>
+            </div>
+
+            <div class="mock-row">
+              <div class="mock-ic mock-ic-blue"><i data-icon="badge"></i></div>
+              <div class="mock-row-body">
+                <div class="mock-row-title">CCIO Rajesh K. matched</div>
+                <div class="mock-row-sub">0.8 km · in-person available</div>
+              </div>
+              <button class="mock-btn">Connect <i data-icon="arrowRight" class="ico-xs"></i></button>
+            </div>
+
+            <div class="mock-row">
+              <div class="mock-ic mock-ic-green"><i data-icon="check"></i></div>
+              <div class="mock-row-body">
+                <div class="mock-row-title">Case #4421 resolved</div>
+                <div class="mock-row-sub">OTP fraud attempt blocked</div>
+              </div>
+              <div class="mock-time">2m</div>
+            </div>
+
+            <!-- CopBot chat assistant -->
+            <div class="mock-copbot">
+              <div class="copbot-avatar" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <circle cx="12" cy="10" r="6" fill="white"/>
+                  <path d="M6 8 Q6 4 12 4 Q18 4 18 8 Z" fill="#1E40AF"/>
+                  <circle cx="10" cy="10" r="1.4" fill="#1E40AF"/>
+                  <circle cx="14" cy="10" r="1.4" fill="#1E40AF"/>
+                  <path d="M9.5 13 Q12 14.5 14.5 13" stroke="#1E40AF" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+                  <circle cx="12" cy="6.5" r="1.2" fill="#E8652A"/>
+                </svg>
+              </div>
+              <div class="copbot-msg">
+                <strong>CopBot</strong>
+                <span>I spotted a scam pattern. Want a tip?</span>
+              </div>
+            </div>
           </div>
-          <svg class="stickman-hero" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <ellipse cx="90" cy="210" rx="36" ry="9" fill="rgba(37,99,235,0.1)"/>
-            <path d="M78 158 Q72 182 64 197" stroke="#2563EB" stroke-width="5.5" stroke-linecap="round"/>
-            <path d="M102 158 Q108 182 116 197" stroke="#2563EB" stroke-width="5.5" stroke-linecap="round"/>
-            <ellipse cx="63" cy="198" rx="9" ry="5" fill="#2563EB" opacity=".6"/>
-            <ellipse cx="117" cy="198" rx="9" ry="5" fill="#2563EB" opacity=".6"/>
-            <path d="M90 78 L90 158" stroke="#2563EB" stroke-width="5.5" stroke-linecap="round"/>
-            <path d="M90 97 Q68 84 54 68" stroke="#2563EB" stroke-width="5" stroke-linecap="round"/>
-            <circle cx="52" cy="66" r="7" fill="#2563EB"/>
-            <path d="M90 97 Q112 86 126 72" stroke="#2563EB" stroke-width="5" stroke-linecap="round"/>
-            <path d="M120 56 L133 56 L133 76 L126.5 82 L120 76 Z" fill="#2563EB"/>
-            <path d="M123 63 L130 63" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <path d="M126.5 60 L126.5 66" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <path d="M80 108 Q90 116 100 108" stroke="rgba(37,99,235,0.3)" stroke-width="1.5" fill="none"/>
-            <path d="M80 118 L90 112 L100 118 L98 132 L90 137 L82 132 Z" fill="#E8652A"/>
-            <text x="90" y="128" text-anchor="middle" fill="white" font-size="7" font-weight="bold" font-family="Nunito,sans-serif">CC</text>
-            <rect x="86" y="72" width="8" height="8" rx="3" fill="#2563EB"/>
-            <circle cx="90" cy="52" r="27" fill="white" stroke="#2563EB" stroke-width="3"/>
-            <path d="M63 46 Q66 25 90 24 Q114 25 117 46" fill="#2563EB" opacity=".1"/>
-            <path d="M63 42 Q63 30 90 28 Q117 30 117 42 Z" fill="#1E40AF"/>
-            <rect x="61" y="41" width="58" height="7" rx="3.5" fill="#2563EB"/>
-            <circle cx="90" cy="36" r="5.5" fill="#E8652A"/>
-            <text x="90" y="39.5" text-anchor="middle" fill="white" font-size="5.5" font-weight="bold" font-family="Nunito,sans-serif">CC</text>
-            <circle cx="81" cy="54" r="5.5" fill="#2563EB"/>
-            <circle cx="99" cy="54" r="5.5" fill="#2563EB"/>
-            <circle cx="82" cy="53" r="2.8" fill="white"/>
-            <circle cx="100" cy="53" r="2.8" fill="white"/>
-            <circle cx="82.5" cy="53" r="1.3" fill="#1a1209"/>
-            <circle cx="100.5" cy="53" r="1.3" fill="#1a1209"/>
-            <path d="M80 66 Q90 74 100 66" stroke="#2563EB" stroke-width="3" stroke-linecap="round" fill="none"/>
-            <circle cx="75" cy="62" r="5" fill="#E8652A" opacity=".2"/>
-            <circle cx="105" cy="62" r="5" fill="#E8652A" opacity=".2"/>
-          </svg>
-          <div class="hb-caption">Meet <span>CopBot</span> — your cyber safety buddy</div>
         </div>
 
         <div class="hb-card hb-mini hb-helpline">
